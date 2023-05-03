@@ -8,5 +8,12 @@
         update_cache: yes
       become: yes
 
+    - name: instalando dependencias com o pip (Django e Django Rest)
+      pip:
+        virtualenv: /home/ubuntu/tcc/venv
+        name: 
+          - django 
+          - djangorestframework
+
 
 #Executa com o: ansible-playbook playbook.yml -u ubuntu --private-key iac-alura.pem -i hosts
