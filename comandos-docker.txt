@@ -1,0 +1,26 @@
+-> Saber a versão do docker
+	docker --version 
+
+-> Baixar imagens no docker
+	docker pull ubuntu;
+	docker pull "nome do pacote"
+
+-> Listando imagens baixadas
+	docker images
+
+-> Executando os containers
+	docker run
+	docker run -i -t ubuntu
+	docker rut -it ubuntu
+
+-> Listar containers em execução
+	docker ps
+
+-> Listar containers qu existem mas foram encerrados
+	docker ps -a
+
+-> Remover containers 
+	docker rm "id do container OU nome do container"
+
+-> Saber se deu certo
+	docker run hello-world
