@@ -18,9 +18,33 @@
 
 -> Listar containers qu existem mas foram encerrados
 	docker ps -a
+	sudo docker container ls
+	
 
 -> Remover containers 
 	docker rm "id do container OU nome do container"
 
 -> Saber se deu certo
 	docker run hello-world
+
+-> Parar de executar um container 
+	docker stop "nome ou id do container"
+
+->Voltar a executar o container
+	docker start "nome ou id do container"
+
+-> Pausar um container
+	docker pause "nome do container"
+
+-> Despausar um container
+	docker unpause "nome do container"
+
+-> Executar um container já criado
+	docker exec "nome do container"
+
+-> Comando menos -P (mapear a porta do container que vai refletir no local host do meu navegador)
+	docker run -d -p 8080:80 "nome do container" 
+
+-> Exibir como o mapeamento de portas de um container está sendo feito.
+	docker port
+
