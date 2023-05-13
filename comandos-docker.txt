@@ -48,3 +48,22 @@
 -> Exibir como o mapeamento de portas de um container está sendo feito.
 	docker port
 
+-> Listar as imagens do docker
+	docker images
+
+-> Descrever uma imagem docker
+	docker inspect "id da imagem"
+
+-> Mostra as imagens dependentes da camada
+	docker history "id da imagem"
+
+-> A imagem é read only, já o container é read and write
+
+-> Vários containers podem ter a mesma imagem, apenas mudando a camada read/write
+
+-> Criar uma imagem a partir de um arquivo
+	docker build -t exemplo/app-node:1
+	docker build (nome da imagem):(versão)
+
+
+
