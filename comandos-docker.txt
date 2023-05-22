@@ -62,8 +62,29 @@
 -> Vários containers podem ter a mesma imagem, apenas mudando a camada read/write
 
 -> Criar uma imagem a partir de um arquivo
-	docker build -t exemplo/app-node:1
-	docker build (nome da imagem):(versão)
+	docker build -t exemplo/app-node:1 .
+	docker build (nome da imagem):(versão) (diretório que está a docker file)
 
+-> Para todas as imagens pegando pela listagem de imagens executadas
+	docker stop $(docker container ls -q)
 
+-> Executar a imagem na porta 8080
+	docker run -p 8080:3000 -d (nome do user)/(app-node)
 
+-> Dar run na aplicação
+	docker run -d leticiaperotti/app-node:1.2
+
+ARG -> apenas no momento de build
+ENV -> fica uma variável disponivel para o container
+
+-> Colocar imagem no docker hub
+	docker push leticiaperotti/app-node:1.0
+
+-> Duplicar uma imagem
+	docker tag (nome da imagem antiga) (nome da nova imagem)
+
+-> Remover todos os container (mesmos parados)
+	docker container rm $(docker container ls -aq)
+
+-> Remover todas as imagens 
+	docker rmi $(docker images ls -aq)
