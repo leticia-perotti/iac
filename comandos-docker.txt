@@ -87,4 +87,29 @@ ENV -> fica uma variável disponivel para o container
 	docker container rm $(docker container ls -aq)
 
 -> Remover todas as imagens 
-	docker rmi $(docker images ls -aq)
+	docker rmi $(docker images ls -aq) --force
+
+-> Ver o tamanho do container
+	docker container ps -s
+
+-> Tamanho virtual do container é tamanho total da imagem
+
+-> Persistir dados localmente
+	docker run -it -v (caminho) : app ubuntu
+	Usando o mouth que é mais semantico
+	docker run -it --mount type=bind,source=.,target=/app ubuntu bash
+
+-> Criar um volume docker
+	 docker volume create meu-volume
+
+-> Usar o volume no docker run
+	docker run -it -v meu-volume:/app ubuntu bash
+
+-> --tmpfs só da no linux
+	Persiste dados em host sem armazenar no read e write (em memória)
+	docker run -it --mount type=tmpfs,destination=/app ubuntu bash
+
+
+-> Inspecinar o container
+	docker inspect (id)
+
