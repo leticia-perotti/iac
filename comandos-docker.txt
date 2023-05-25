@@ -113,3 +113,27 @@ ENV -> fica uma variável disponivel para o container
 -> Inspecinar o container
 	docker inspect (id)
 
+ 
+-> Redes que o docker tem
+	docker network bridge
+
+
+-> Posso fazer ping entre containers
+
+-> Criar sua própria bridge
+	docker network create --driver bridge minha-bridge
+
+-> Criar o container em uma network bridge
+	docker run -d --name pong --network minha-bridge ubuntu sleep 1d
+
+-> Driver none: o container não vai ter nenhuma interface de rede vinculadaS
+
+-> Ubuntu (comando para abrir o terminal ubuntu)
+
+-> Host consigo acessar pelo meu navegador local
+
+docker run -d --network minha-bridge --name alurabooks -p 3000:3000 aluradocker/alura-books:1.0
+
+-> Docker compose (cria o arquivo .yml) 
+	docker-compose up
+	docker-compose down
